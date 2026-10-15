@@ -2,13 +2,16 @@ def display_header():
     print("Hands-on Activity: Student Performance Evaluator")
 display_header()
 
-name = str(input("Enter Student Name: "))
-score1 = float(input("Enter first assessment score: "))
-score2 = float(input("Enter second assessment score: "))
-score3 = float(input("Enter third assessment score: "))
+def get_student_info():
+    global score1, score2, score3, name
+    name = input("Student Name: ")
+    score1 = float(input("Enter first assessment score: "))
+    score2 = float(input("Enter second assessment score: "))
+    score3 = float(input("Enter third assessment score: "))
 
-def evaluate_performance(score1, score2, score3):
-    avg = 3 / (score1 + score2 + score3)
+def evaluate_performance():
+    global avg, score1, score2, score3,
+    avg = 3 / score1 + score2 + score3
     if avg < 75:
         print("Needs Improvement.")
     elif avg < 80:
@@ -21,9 +24,10 @@ def evaluate_performance(score1, score2, score3):
         print ("Outstanding.")
 
 def display_report():
+    global avg, score1, score2, score3, name
     print(f"Student Name: {{name}}.")
-    print(f"Student scores: {{score1}}, {{score2}}, {{score3}}.}")
+    print(f"Student scores: {{score1}}, {{score2}}, {{score3}}.")
     print(f"Average score: {{avg}}.")
-    evaluate_performance(score1, score2, score3)
+    evaluate_performance()
 
 display_report()
